@@ -12,6 +12,9 @@
     <string name="err_email_invalid">Email không hợp lệ</string>
     <string name="err_password_short">Mật khẩu tối thiểu 6 ký tự</string>
     <string name="status_login_ok">Đăng nhập thành công: %1$s</string>
+    <string name="tv_forgot_password">Quên mật khẩu?</string>
+    <string name="chk_show_password">Hiện mật khẩu</string>
+    <string name="msg_forgot_password_click">Tính năng Quên mật khẩu đang được phát triển</string>
 
     <!-- Profile -->
     <string name="avatar_desc">Ảnh đại diện</string>
@@ -20,8 +23,10 @@
     <string name="label_email">Email</string>
     <string name="label_mssv">MSSV</string>
     <string name="label_class">Lớp</string>
+    <string name="label_phone">Số điện thoại</string>
     <string name="value_mssv">22A001</string>
     <string name="value_class">CD22TT1</string>
+    <string name="value_phone">0901234567</string>
     <string name="btn_edit">Chỉnh sửa</string>
     <string name="btn_logout">Đăng xuất</string>
 </resources>

@@ -2,6 +2,8 @@ package vn.edu.vlsc.lab2
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +23,22 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setupUI() {
         binding.btnLogin.setOnClickListener { handleLogin() }
+
+        // Báo Toast khi bấm "Quên mật khẩu?" (Cấp 1)
+        binding.tvForgotPassword.setOnClickListener {
+            Toast.makeText(this, R.string.msg_forgot_password_click, Toast.LENGTH_SHORT).show()
+        }
+
+        // Bật/tắt hiện mật khẩu qua CheckBox (Cấp 2)
+        binding.cbShowPassword.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                binding.edtPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
+            } else {
+                binding.edtPassword.transformationMethod = PasswordTransformationMethod.getInstance()
+            }
+            // Di chuyển con trỏ xuống cuối văn bản
+            binding.edtPassword.setSelection(binding.edtPassword.text?.length ?: 0)
+        }
     }
 
     private fun handleLogin() {
@@ -28,8 +46,8 @@ class LoginActivity : AppCompatActivity() {
         val password = binding.edtPassword.text.toString().trim()
 
         // Xóa thông báo lỗi của lần bấm trước
-        binding.edtEmail.error = null
-        binding.edtPassword.error = null
+        binding.tilEmail.error = null
+        binding.tilPassword.error = null
 
         when {
             email.isEmpty() || password.isEmpty() -> {
@@ -37,9 +55,9 @@ class LoginActivity : AppCompatActivity() {
                 binding.tvStatus.setText(R.string.status_missing)
             }
             !Patterns.EMAIL_ADDRESS.matcher(email).matches() ->
-                binding.edtEmail.error = getString(R.string.err_email_invalid)
+                binding.tilEmail.error = getString(R.string.err_email_invalid)
             password.length < 6 ->
-                binding.edtPassword.error = getString(R.string.err_password_short)
+                binding.tilPassword.error = getString(R.string.err_password_short)
             else -> {
                 binding.tvStatus.text = getString(R.string.status_login_ok, email)
                 val intent = Intent(this, ProfileActivity::class.java)

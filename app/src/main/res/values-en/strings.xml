@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Lab2_Layout_ViewBinding</string>
+
+    <!-- Login -->
+    <string name="logo_desc">VLSC Logo</string>
+    <string name="login_title">SYSTEM LOGIN</string>
+    <string name="hint_email">Email Address</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="msg_missing_info">Please enter email and password</string>
+    <string name="status_missing">Status: Please fill in all fields</string>
+    <string name="err_email_invalid">Invalid email address</string>
+    <string name="err_password_short">Password must be at least 6 characters</string>
+    <string name="status_login_ok">Login successful: %1$s</string>
+    <string name="tv_forgot_password">Forgot password?</string>
+    <string name="chk_show_password">Show password</string>
+    <string name="msg_forgot_password_click">Forgot password feature is under development</string>
+
+    <!-- Profile -->
+    <string name="avatar_desc">Avatar</string>
+    <string name="profile_name">Nguyen Van A</string>
+    <string name="profile_role">Information Technology Student</string>
+    <string name="label_email">Email</string>
+    <string name="label_mssv">Student ID</string>
+    <string name="label_class">Class</string>
+    <string name="label_phone">Phone Number</string>
+    <string name="value_mssv">22A001</string>
+    <string name="value_class">CD22TT1</string>
+    <string name="value_phone">0901234567</string>
+    <string name="btn_edit">Edit</string>
+    <string name="btn_logout">Logout</string>
+</resources>
